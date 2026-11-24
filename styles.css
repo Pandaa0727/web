@@ -168,6 +168,126 @@ code {
   grid-column: span 2;
 }
 
+.tetris {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 40;
+  width: 278px;
+  padding: 12px;
+  background: var(--calc);
+  color: var(--key-text);
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(36, 31, 26, 0.28);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.tetris.is-collapsed {
+  width: auto;
+}
+
+.tetris.is-collapsed .tetris-body {
+  display: none;
+}
+
+.tetris-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tetris-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.tetris-score {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #f0d7a8;
+}
+
+.tetris-toggle {
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: var(--key-fn);
+  color: #f0d7a8;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.tetris-body {
+  display: grid;
+  grid-template-columns: 180px 72px;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#tetris-canvas,
+#tetris-next {
+  display: block;
+  width: 100%;
+  background: #16120f;
+  border-radius: 12px;
+}
+
+.tetris-side {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tetris-label {
+  margin: 0;
+  font-size: 11px;
+  color: #f0d7a8;
+}
+
+.tetris-btn {
+  border: 0;
+  border-radius: 12px;
+  padding: 8px 0;
+  background: var(--key-op);
+  color: var(--key-text);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tetris-btn:hover,
+.tetris-toggle:hover {
+  filter: brightness(1.1);
+}
+
+.tetris-hint {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.4;
+  color: #9d9387;
+}
+
+.tetris-pad {
+  grid-column: 1 / -1;
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.tetris-pad button {
+  height: 36px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--key);
+  color: var(--key-text);
+  font-size: 16px;
+  cursor: pointer;
+}
+
 @media (max-width: 640px) {
   .about {
     grid-template-columns: 1fr;
@@ -175,5 +295,16 @@ code {
 
   .page {
     padding-top: 40px;
+    padding-bottom: 120px;
+  }
+
+  .tetris {
+    right: 10px;
+    bottom: 10px;
+    width: min(278px, calc(100vw - 20px));
+  }
+
+  .tetris-pad {
+    display: grid;
   }
 }

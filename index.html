@@ -68,6 +68,33 @@
         </div>
       </section>
     </main>
+
+    <aside class="tetris" id="tetris" aria-label="俄罗斯方块">
+      <div class="tetris-top">
+        <div>
+          <p class="tetris-title">俄罗斯方块</p>
+          <p class="tetris-score">分数 <span id="tetris-score">0</span></p>
+        </div>
+        <button type="button" class="tetris-toggle" id="tetris-toggle" aria-pressed="true">收起</button>
+      </div>
+      <div class="tetris-body" id="tetris-body">
+        <canvas id="tetris-canvas" width="180" height="360" aria-label="游戏画面"></canvas>
+        <div class="tetris-side">
+          <p class="tetris-label">下一个</p>
+          <canvas id="tetris-next" width="72" height="72" aria-hidden="true"></canvas>
+          <button type="button" class="tetris-btn" id="tetris-start">开始</button>
+          <p class="tetris-hint">← → ↓ 旋转↑</p>
+        </div>
+        <div class="tetris-pad" aria-label="触控操作">
+          <button type="button" data-tetris="rot">↻</button>
+          <button type="button" data-tetris="left">←</button>
+          <button type="button" data-tetris="down">↓</button>
+          <button type="button" data-tetris="right">→</button>
+        </div>
+      </div>
+    </aside>
+
     <script src="script.js"></script>
+    <script src="tetris.js"></script>
   </body>
 </html>
