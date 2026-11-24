@@ -1,0 +1,179 @@
+:root {
+  --bg: #ffffff;
+  --ink: #1c1915;
+  --muted: #6b645b;
+  --card: #fffdf8;
+  --line: #e4dccf;
+  --accent: #c4552a;
+  --calc: #241f1a;
+  --key: #3a332c;
+  --key-fn: #4d453c;
+  --key-op: #c4552a;
+  --key-text: #f7f1e8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.page {
+  width: min(720px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 64px 0 80px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 12px;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(40px, 7vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.lead {
+  max-width: 38em;
+  margin: 16px 0 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+code {
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  color: var(--ink);
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.about article {
+  padding: 18px 18px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.about h2 {
+  margin: 0 0 8px;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.about p {
+  margin: 0;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.calculator {
+  margin-top: 48px;
+}
+
+.calc-head h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.calc-head p {
+  margin: 6px 0 16px;
+  color: var(--muted);
+}
+
+.calc {
+  width: min(360px, 100%);
+  padding: 16px;
+  background: var(--calc);
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(36, 31, 26, 0.18);
+}
+
+.display {
+  display: block;
+  min-height: 84px;
+  padding: 18px 12px 8px;
+  text-align: right;
+  font-family: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 44px;
+  line-height: 1.1;
+  color: var(--key-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  height: 64px;
+  border: 0;
+  border-radius: 18px;
+  background: var(--key);
+  color: var(--key-text);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.key:hover {
+  filter: brightness(1.12);
+}
+
+.key:active {
+  transform: translateY(1px);
+}
+
+.key-fn {
+  background: var(--key-fn);
+  color: #f0d7a8;
+}
+
+.key-op,
+.key-eq {
+  background: var(--key-op);
+}
+
+.key-op.is-active {
+  background: #f7f1e8;
+  color: var(--accent);
+}
+
+.key-zero {
+  grid-column: span 2;
+}
+
+@media (max-width: 640px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    padding-top: 40px;
+  }
+}
